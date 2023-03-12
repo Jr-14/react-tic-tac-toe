@@ -28,11 +28,22 @@ function Game() {
 
   const moves = history.map((_, move) => {
     let description;
+    // Current move
+    if (move === history.length - 1) {
+      description = `You are at move ${move}`
+      return (
+        <div>
+          { description }
+        </div>
+      )
+    }
+
     if (move > 0) {
       description = `Go to move #${move}`;
     } else {
       description = `Go to game start`;
     }
+
     return (
       <li key={move}>
         <button onClick={() => jumpTo(move)}>{description}</button>
