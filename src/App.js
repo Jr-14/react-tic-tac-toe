@@ -15,8 +15,19 @@ function Board() {
   const [squareValues, populateSquareValues] = useState(Array(9).fill(null));
 
   function handlePopulateSquareValues(i) {
+    // Square values are already filled in, then don't handle 
+    // The click
+    if (squareValues[i]) {
+      return;
+    }
+
     const newSquareValues = [...squareValues];
-    newSquareValues[i] = 'X';
+    if (xIsNext) {
+      newSquareValues[i] = 'X';
+    } else {
+      newSquareValues[i] = 'O';
+    }
+    isXNext(!xIsNext)
     populateSquareValues(newSquareValues);
   }
 
