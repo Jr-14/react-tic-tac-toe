@@ -114,7 +114,7 @@ function Board({ xIsNext, squares, onPlay }) {
 
 function Square({ value, onSquareClick }) {
   return (
-    <button classname="square" onClick={onSquareClick}>
+    <button className="square" onClick={onSquareClick}>
       { value }
     </button>
   );
